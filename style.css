@@ -1,0 +1,53 @@
+body {
+	margin: auto;
+	background-image: url("img_resources/photo-nyny.jpeg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.main_top_logo {
+	margin-left: 50px;
+	font-family: 'Comic Sans MS', cursive;
+}
+
+.login {
+	margin-right: 25px;
+	font-family: 'Comic Sans MS', cursive;
+}
+
+.register {
+	font-family: 'Comic Sans MS', cursive;
+}
+
+.main_top {
+	display: flex;
+	position: fixed;
+	background-color: rgb(255, 255, 255);;
+	width: 100%;
+	height: 100px;
+	box-shadow: 10px 10px 15px black;
+}
+
+.main_centre_top {
+	width: 100%;
+	height: 120px;
+}
+
+.main_centre {
+	margin: auto;
+	background-image: url("img_resources/star_pattern_background_1.png");
+	width: 900px;
+	height: 3000px; /*Make this an auto*/
+	border-radius: 10px;
+	border: solid 3px #cccccc;
+	box-shadow: 10px 10px 15px cadetblue;
+}
+
+.top_posts {
+	margin: auto;
+	width: 700px;
+	height: 3000px; /*Make this an auto*/
+	box-shadow: 10px 10px 15px blue;
+}
