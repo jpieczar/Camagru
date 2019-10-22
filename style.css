@@ -1,12 +1,15 @@
 body {
 	margin: auto;
-	background-image: url("img_resources/photo-nyny.jpeg");
+	background-image: url("img_resources/background/teo-duldulao-4op9_2Bt2Eg-unsplash.jpg"); 
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
+	background-attachment: fixed; 
 }
 
+a{
+	text-decoration: none;
+}
 .main_top_logo {
 	margin-left: 50px;
 	font-family: 'Comic Sans MS', cursive;
@@ -17,17 +20,35 @@ body {
 	font-family: 'Comic Sans MS', cursive;
 }
 
+.camera_body {
+	margin-left: 300px;
+	background-color: black;
+}
+
+.camera_rainbow {
+	margin-left: 300px;
+	background-color: blue;
+}
+
+.camera_icon {
+	margin-top: 5px;
+	margin-left: 600px;
+	z-index: 2;
+}
+
 .register {
 	font-family: 'Comic Sans MS', cursive;
 }
 
 .main_top {
+	position: absolute;
 	display: flex;
 	position: fixed;
 	background-color: rgb(255, 255, 255);;
 	width: 100%;
-	height: 100px;
+	height: 70px;
 	box-shadow: 10px 10px 15px black;
+	z-index: 1;
 }
 
 .main_centre_top {
@@ -37,17 +58,42 @@ body {
 
 .main_centre {
 	margin: auto;
-	background-image: url("img_resources/star_pattern_background_1.png");
+	background-color: ghostwhite;
+	opacity: 0.8;
 	width: 900px;
-	height: 3000px; /*Make this an auto*/
+	height: 3000px;
 	border-radius: 10px;
 	border: solid 3px #cccccc;
-	box-shadow: 10px 10px 15px cadetblue;
+	box-shadow: 10px 10px 15px black;
+}
+
+.main_centre_small {
+	margin: auto;
+	background-color: ghostwhite;
+	opacity: 0.8;
+	width: 900px;
+	height: 750px;
+	border-radius: 10px;
+	border: solid 3px #cccccc;
+	box-shadow: 10px 10px 15px black;
 }
 
 .top_posts {
 	margin: auto;
 	width: 700px;
-	height: 3000px; /*Make this an auto*/
+	height: 3000px;
 	box-shadow: 10px 10px 15px blue;
+}
+
+.frame {
+	width: 550px;
+	height: 600px;
+	border: 10px solid white;
+	background-color: white;
+	margin:0 auto;
+	box-shadow: 25px 25px 15px black;
+}
+
+.polaroid {
+	margin-left: 25px;
 }
