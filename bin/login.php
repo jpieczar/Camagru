@@ -1,7 +1,7 @@
 <html>
 	<head>
-		<title>Register</title>
-		<link rel="stylesheet" type= "text/css" href="style.css">
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div class="main_top">
@@ -17,10 +17,8 @@
 		<div class="main_centre_small">
 			<form action="register.php" method="post">
 				<input type="text" placeholder="Username">
-				<input type="email" placeholder="Email">
 				<input type="password" placeholder="Password">
-				<input type="password" placeholder="Re-enter Password">
-				<input type="submit" placeholder="Register">
+				<input type="submit" value="Login">
 			</form>
 		</div>
 	</body>
