@@ -1,7 +1,7 @@
 <html>
 	<?php
-		include_once "config/setup.php";
 		include "app/views/header.html";
+		include "app/views/footer.html";
 	?>
 	<head>
 		<title>Camagru</title>
@@ -9,8 +9,6 @@
 	</head>
 	<body>
 		<div class="main_centre_top"></div>
-		<div class="main_centre">
-			<div class="top_posts"></div>
-		</div>
+		<div class="main_centre"></div>
 	</body>
 </html>

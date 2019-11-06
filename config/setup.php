@@ -1,6 +1,6 @@
 <?php
-include "database.php";
-include "connection.php";
+include_once "database.php";
+include_once "connection.php";
 
 try
 {
@@ -17,11 +17,11 @@ try
         `create_date`	DATETIME DEFAULT current_timestamp
     )";
     $conn->exec($query);
-    // echo "<p style='color:green;'>Created table ~~usrtbl~~</p>";
+    echo "<p style='color:green;'>Created table ~~usrtbl~~</p>";
 } 
 catch (PDOException $err)
 {
-    // echo "<p style='color:red;'>Failed to create table ~~usrtbl~~</p>".$err->getMessage();
+    echo "<p style='color:red;'>Failed to create table ~~usrtbl~~</p>".$err->getMessage();
 }
 try
 {
@@ -35,11 +35,11 @@ try
         `create_date`	DATETIME DEFAULT current_timestamp
     )";
     $conn->exec($query);
-    // echo "<p style='color:green;'>Created table ~~imgtbl~~</p>";
+    echo "<p style='color:green;'>Created table ~~imgtbl~~</p>";
 } 
 catch (PDOException $err)
 {
-    // echo "<p style='color:red;'>Failed to create table ~~imgtbl~~</p>".$err->getMessage();
+    echo "<p style='color:red;'>Failed to create table ~~imgtbl~~</p>".$err->getMessage();
 }
 try
 {   /* Create an admin and 4 test users. */
@@ -49,16 +49,17 @@ try
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $query = "INSERT INTO `usrtbl` (`sudo`, `verification`, `username`, `email`, `pass`)
     VALUES	('1', '1', 'adminME', 'adminme@camagru.com', '$pass'),
-    ('0', '1', 'alice', 'alice@gmail.com', '$ssap'),
-    ('0', '0', 'bobby', 'bobby@gmail.com', '$ssap'),
-    ('0', '0', 'claire', 'claire@gmail.com', '$pass'),
-    ('0', '1', 'derrick', 'derrick@gmail.com', '$pass');
+    ('0', '1', 'alice_palace', 'alice@gmail.com', '$ssap'),
+    ('0', '0', 'bobby_dobby', 'bobby@gmail.com', '$ssap'),
+    ('0', '0', 'claire_bear', 'claire@gmail.com', '$pass'),
+    ('0', '1', 'derrick_avenue', 'derrick@gmail.com', '$pass');
+    WHERE NOT EXISTS (SELECT `username` FROM `usrtbl`)
     ";
     $conn->exec($query);
-    // echo "<p style='color:green;'>Admin created</p>";
+    echo "<p style='color:green;'>Admin created</p>";
 } 
 catch (PDOException $err)
 {
-    // echo "<p style='color:red;'>Failed to create user: admin</p>".$err->getMessage();
+    echo "<p style='color:red;'>Failed to create user: admin</p>".$err->getMessage();
 }
 ?>
