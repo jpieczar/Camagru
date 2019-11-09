@@ -2,7 +2,7 @@
 
 $username = "root";
 $dsn = "mysql:host=localhost;dbname=register";
-$password = "303097JpP";
+$password = "";
 
 try
 {
