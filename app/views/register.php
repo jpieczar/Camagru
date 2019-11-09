@@ -1,5 +1,6 @@
 <?php
 	require "header.html";
+	include_once "../controllers/register.controllers.php";
 ?>
 <html>
 	<head>

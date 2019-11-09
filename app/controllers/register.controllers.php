@@ -1,6 +1,6 @@
 <?php
 	/* I dunno mang. Just get your work done. */
-	include "../../connection.php";
+	include_once "../../connection.php";
 
 	$username = $_POST["username"];
 	$email = $_POST["email"];
@@ -9,5 +9,5 @@
 	$stmt=$conn->prepare("INSERT INTO `usrtbl` (`username`, `email`, `pass`)
     VALUES	('$username', '$email', '$password');");
 	$stmt = execute();
-	header("Location: ../views/register.php");
+	// header("Location: ../views/register.php");
 ?>

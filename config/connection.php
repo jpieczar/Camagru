@@ -1,15 +1,13 @@
 <?php
-include "database.php";
+include_once "database.php";
 try
 {
-    $conn = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
+    $conn = new PDO($DB_SERVER_DB, $DB_USER, $DB_PASSWORD);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $query = "CREATE DATABASE `".$DB_NAME."`";
-    $conn->exec($query);
-    echo "<p style='color:green;'>Database created</p>";
+    echo "<p style='color:green;'>Connected</p>";
 }
 catch (PDOException $err)
 {
-    echo "<p style='color:red;'>Failed to create database</p>".$err->getMessage();
+    echo "<p style='color:red;'>Failed to connect</p>".$err->getMessage();
 }
 ?>
