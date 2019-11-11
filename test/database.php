@@ -1,16 +1,9 @@
 <?php
 
-$username = "root";
-$dsn = "mysql:host=localhost;dbname=register";
-$password = "";
+$DB_RESU = "root";
+$DB_SSAP = "";
+$DB_EMAN = "aaahhh";
+$DB_DSN = "mysql:host=localhost";
+$DB_SERVER_DSN = "mysql:host=localhost;dbname=".$DB_EMAN;
 
-try
-{
-    $db = new PDO($dsn, $username, $password);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected";
-}
-catch (PDOException $ex)
-{
-    echo "Connection failed";
-}
+?>
