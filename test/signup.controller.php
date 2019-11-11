@@ -8,6 +8,11 @@ if (isset($_POST["submit"]))
     $username = htmlentities($_POST["username"]);
 	$password = md5(htmlentities($_POST["password"]));
 
+	/* Below is to see if the input is correct. */
+	$form_errors = array($email, $username, $password);
+
+
+	/* Below adds the user. */
 	try
 	{
 		$db = new PDO($DB_SERVER_DSN, $DB_RESU, $DB_SSAP);
@@ -18,7 +23,17 @@ if (isset($_POST["submit"]))
 		$stmt = $db->prepare($sql);
 		$stmt->execute(array(":username" => $username, ":email" => $email, ":password" => $password));
 
-		/*
+		echo "<p style='color:green; font-weight:bold;'>User added</p>";
+		header("Location: success.html");
+	}
+	catch (PDOException $err)
+	{
+		echo "<p style='color: red;'>Failed to add user.</P>";
+		header("Location: failure.html");
+	}
+}
+
+/*
 		
 		*--------------------------------------------------------------------------*
 		| The code below is not safe to use as it does not use prepared statements |
@@ -33,16 +48,5 @@ if (isset($_POST["submit"]))
 		$db->exec($sql);
 
 		*/
-
-		echo "<p style='color:green; font-weight:bold;'>User added</p>";
-		header("Location: success.html");
-	}
-	catch (PDOException $err)
-	{
-		echo "<p style='color: red;'>Failed to add user.</P>";
-		header("Location: failure.html");
-	}
-}
-
 
 ?>
