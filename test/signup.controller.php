@@ -1,16 +1,22 @@
 <?php
 
 include_once "database.php";
+include "error.check.php";
 
 if (isset($_POST["submit"]))
 {
+	/* Below is to see if the input is correct. */
+	// $form_errors = array($email, $username, $password);
+	userin($_POST["password"], $_POST["username"]);
+	if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
+	{
+		header("Location: failure.html");
+		exit();
+	}
+
 	$email = htmlentities($_POST["email"]);
     $username = htmlentities($_POST["username"]);
-	$password = md5(htmlentities($_POST["password"]));
-
-	/* Below is to see if the input is correct. */
-	$form_errors = array($email, $username, $password);
-
+	$password = password_hash(htmlentities($_POST["password"]), PASSWORD_DEFAULT);
 
 	/* Below adds the user. */
 	try
@@ -23,12 +29,12 @@ if (isset($_POST["submit"]))
 		$stmt = $db->prepare($sql);
 		$stmt->execute(array(":username" => $username, ":email" => $email, ":password" => $password));
 
-		echo "<p style='color:green; font-weight:bold;'>User added</p>";
+		// echo "<p style='color:green; font-weight:bold;'>User added</p>";
 		header("Location: success.html");
 	}
 	catch (PDOException $err)
 	{
-		echo "<p style='color: red;'>Failed to add user.</P>";
+		// echo "<p style='color: red;'>Failed to add user.</P>";
 		header("Location: failure.html");
 	}
 }
