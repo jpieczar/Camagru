@@ -1,7 +1,8 @@
 <html>
 	<?php
-		include "app/views/header.html";
-		include "app/views/footer.html";
+		include_once "app/controllers/session.controllers.php";
+		include_once "app/views/header.html";
+		include_once "app/views/footer.html";
 	?>
 	<head>
 		<title>Camagru</title>
@@ -9,6 +10,7 @@
 	</head>
 	<body>
 		<div class="main_centre_top"></div>
-		<div class="main_centre"></div>
+		<div class="main_centre">
+		</div>
 	</body>
 </html>

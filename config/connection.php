@@ -1,5 +1,7 @@
 <?php
+
 include_once "database.php";
+
 try
 {
     $conn = new PDO($DB_SERVER_DB, $DB_USER, $DB_PASSWORD);

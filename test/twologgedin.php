@@ -6,7 +6,7 @@ echo "<h1>(2) loggedin (2)</h1>";
 echo "<a href='loggedin.php'>Visit W3Schools.com!</a>";
 echo "<p>You are logged in as</p>";
 
-var_dump($_POST);
+var_dump($_SESSION);
 
 echo "<form action='logout.controller.php' method='post'>
     <input type='submit' name='logout' value='signout'>

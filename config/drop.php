@@ -10,6 +10,6 @@
    } 
    catch (PDOException $err)
    {
-      echo "<p style='color: red;'>Unable to delete database.".$err->getMessage().".</P>";
+      echo "<p style='color: red;'>Unable to delete database: ".$err->getMessage().".</P>";
    }
 ?>

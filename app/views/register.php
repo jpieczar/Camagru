@@ -10,7 +10,7 @@
 	<body>
 		<div class="main_centre_top"></div>
 		<div class="main_centre_small">
-			<h1 class="main_top_logo">Registration Pepe</h1>
+			<h1 class="main_top_logo">Registration Page</h1>
 			<form action="../controllers/register.controllers.php" method="post" class="form">
 				<input type="text" name="username" title="username" placeholder="Username">
 				<input type="email" name="email" title="email" placeholder="Email">
