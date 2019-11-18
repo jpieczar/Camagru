@@ -5,8 +5,6 @@ include "error.controllers.php";
 include_once "session.controllers.php";
 include_once "../../config/connection.php";
 
-
-
 if(isset($_POST['submit']))
 {
 	$user = htmlentities($_POST['username']);
@@ -14,7 +12,6 @@ if(isset($_POST['submit']))
 	$query = "SELECT * FROM `usrtbl` WHERE `username` = :username";
 	try
 	{
-		$db = new PDO($DB_SERVER_DB, $DB_USER, $DB_PASSWORD);
 		$stmt = $db->prepare($query);
 		$stmt->execute([':username' => $user]);
 		$res = $stmt->fetch();

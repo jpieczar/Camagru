@@ -16,4 +16,17 @@ function userin($password, $username)
 	}
 }
 
+function duplicator($username, $email, $db)
+{
+	$sql = "SELECT * FROM `usrtbl` WHERE `username` = :username OR `email` = :email LIMIT 1";
+	$stmt = $db->prepare($sql);
+	$stmt->execute(array(":username" => $username, ":email" => $email));
+	$res = $stmt->fetch();
+	if (!empty($res))
+	{
+		header("Location: ../views/error.php");
+		exit();
+	}
+}
+
 ?>

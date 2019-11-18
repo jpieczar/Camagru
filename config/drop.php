@@ -1,11 +1,12 @@
 <?php
    include_once "database.php";
+   include_once "connection.php";
    try
    {
-      $conn = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
-      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      // $db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
+      // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $query = "DROP DATABASE `".$DB_NAME."`";
-      $conn->exec($query);
+      $db->exec($query);
       echo "<p style='color: green;'>Database deleted.</P>";
    } 
    catch (PDOException $err)

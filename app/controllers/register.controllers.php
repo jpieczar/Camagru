@@ -8,6 +8,8 @@ if (isset($_POST["submit"]))
 	/* Below is to see if the input is correct. */
 	// $form_errors = array($email, $username, $password);
 	userin($_POST["password"], $_POST["username"]);
+	duplicator($_POST["username"], $_POST["email"], $db);
+
 	if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
 	{
 		// echo "<p style='color:red; font-weight:bold;'>Email error</p>";
@@ -22,8 +24,6 @@ if (isset($_POST["submit"]))
 	/* Below adds the user. */
 	try
 	{
-		$db = new PDO($DB_SERVER_DB, $DB_USER, $DB_PASSWORD);
-		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$sql = "INSERT INTO `usrtbl` (`username`, `email`, `pass`)
 		VALUES (:username, :email, :passwor);";
 
