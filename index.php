@@ -1,6 +1,6 @@
 <html>
 	<?php
-		// include_once "app/controllers/session.controllers.php";
+		include_once "app/controllers/session.controllers.php";
 		include_once "app/views/header.html";
 		include_once "app/views/footer.html";
 	?>
