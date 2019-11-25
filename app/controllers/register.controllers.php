@@ -1,6 +1,6 @@
 <?php
 include_once "error.controllers.php";
-// include_once "email.controllers.php";
+include_once "email.controllers.php";
 include_once "../../config/connection.php";
 
 
@@ -32,8 +32,7 @@ if (isset($_POST["submit"]))
 		$stmt->execute(array(":username" => $username, ":email" => $email, ":passwor" => $password));
 
 		// echo "<p style='color:green; font-weight:bold;'>User added</p>";
-		// sendEmail($email);
-		header("Location: ../views/newAccount.php");
+		sendEmail($email);
 	}
 	catch (PDOException $err)
 	{

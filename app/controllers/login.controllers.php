@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
 		$stmt = $db->prepare($query);
 		$stmt->execute([':username' => $user]);
 		$res = $stmt->fetch();
-		if (password_verify($_POST["password"], $res['pass']))
+		if (password_verify($_POST["password"], $res['pass']) && $res['verification'] == 1)
 		{
 			$username = $res['username'];
 			$id = $res['id'];
@@ -24,6 +24,10 @@ if(isset($_POST['submit']))
 			$_SESSION["username"] = $username;
 			// session_write_close();
 			// echo $_SESSION["id"];
+			header("Location: ../views/profile.php");
+		}
+		else
+		{
 			header("Location: ../../index.php");
 		}
 	}
