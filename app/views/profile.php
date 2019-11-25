@@ -24,6 +24,15 @@
 				<input type="submit" name="submit" title="login" value="Logout">
 			</form>
 			<h1 class="main_top_logo">Change stuff here:</h1>
+			<form action="../controllers/logout.controllers.php" method="post" class="form">
+				<input type="submit" name="cEmail" title="login" value="Change Email">
+			</form>
+			<form action="../controllers/logout.controllers.php" method="post" class="form">
+				<input type="submit" name="cPassword" title="login" value="Change Password">
+			</form>
+			<form action="../controllers/logout.controllers.php" method="post" class="form">
+				<input type="submit" name="cUsername" title="login" value="Change Username">
+			</form>
 		</div>
 	</body>
 </html>

@@ -7,7 +7,6 @@ include_once "../../config/connection.php";
 if (isset($_POST["submit"]))
 {
 	/* Below is to see if the input is correct. */
-	// $form_errors = array($email, $username, $password);
 	userin($_POST["password"], $_POST["username"]);
 	duplicator($_POST["username"], $_POST["email"], $db);
 
