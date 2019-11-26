@@ -1,12 +1,12 @@
 <?php
 	include_once "../controllers/session.controllers.php";
-	include_once "../controllers/profile.controllers.php";
 	require "header.html";
 
-	// if (!isset($_SESSION["username"]))
-	// {
-	// 	header("Location: ../../index.php");
-	// }
+	/* This prevents unauthorised page access. */
+	if (!isset($_SESSION["username"]))
+	{
+		header("Location: ../../index.php");
+	}
 ?>
 <html>
 	<head>
@@ -21,17 +21,20 @@
 				echo $_SESSION['username'];
 			?>
 			<form action="../controllers/logout.controllers.php" method="post" class="form">
-				<input type="submit" name="submit" title="login" value="Logout">
+				<input type="submit" name="submit" title="logout" value="Logout">
 			</form>
 			<h1 class="main_top_logo">Change stuff here:</h1>
-			<form action="../controllers/logout.controllers.php" method="post" class="form">
-				<input type="submit" name="cEmail" title="login" value="Change Email">
+			<form action="../controllers/profile.controllers.php" method="post" class="form">
+				<input type="email" name="bemail" title="Change email" placeholder="Change Email">
+				<input type="submit" name="cEmail" title="Change email" value="Change Email">
 			</form>
-			<form action="../controllers/logout.controllers.php" method="post" class="form">
-				<input type="submit" name="cPassword" title="login" value="Change Password">
+			<form action="../controllers/profile.controllers.php" method="post" class="form">
+				<input type="password" name="bpassword" title="Change password" placeholder="Change Password">
+				<input type="submit" name="cPassword" title="Change password" value="Change Password">
 			</form>
-			<form action="../controllers/logout.controllers.php" method="post" class="form">
-				<input type="submit" name="cUsername" title="login" value="Change Username">
+			<form action="../controllers/profile.controllers.php" method="post" class="form">
+			*>>	<input type="text" name="busername" title="Change username" placeholder="Change Username">
+			*>>	<input type="submit" name="cUsername" title="Change username" value="Change Username">
 			</form>
 		</div>
 	</body>
