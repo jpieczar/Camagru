@@ -4,11 +4,7 @@ include_once "../../config/database.php";
 include "error.controllers.php";
 include_once "session.controllers.php";
 include_once "../../config/connection.php";
-
-/* 
- * Here will sit the change (update database) functions.
- * Send an email notifying about the update.
- */
+include_once "email.controllers.php";
 
 if (isset($_POST["cPassword"]))
 {
@@ -35,34 +31,52 @@ if (isset($_POST["cPassword"]))
 	";
 	$headers = "change@camagru.com";
 	mail($to, $subject, $message, $headers);
-	header("Location: ../views/login.php");
+	include_once "logout.controllers.php";
 }
 
 if (isset($_POST["cUsername"]))
 {
 	$user = $_SESSION['username'];
-	userin($_POST["bpassword"], $user);
-	$password = password_hash(htmlentities($_POST["bpassword"]), PASSWORD_DEFAULT);
+	$uname = htmlentities($_POST["busername"]);
+	userin("G00dPass", $uname);
+	duplicator($uname, " ", $db);
 
-	$sql = "UPDATE `usrtbl` SET `pass` = :pass WHERE `username` = :username;";
+	$sql = "UPDATE `usrtbl` SET `username` = :uname WHERE `username` = :username;";
 
 	$stmt = $db->prepare($sql);
-	$stmt->execute(array(":username" => $user, ":pass" => $password));
+	$stmt->execute(array(":username" => $user, ":uname" => $uname));
 
-	$query = "SELECT `email` FROM `usrtbl` WHERE `username` = :username";
+	$query = "SELECT `email` FROM `usrtbl` WHERE `username` = :uname";
 	$stmt = $db->prepare($query);
-	$stmt->execute([':username' => $user]);
+	$stmt->execute([':uname' => $uname]);
 	$res = $stmt->fetch();
 	
 	$to = $res['email'];
-	$subject = "PASSWORD CHANGE";
+	$subject = "USERNAME CHANGE";
 	$message = "
-	<p>Hey there. You just changed your password. Why tho?</p>
+	<p>Hey there. You just changed your username. Why tho?</p>
 	<p>Click below to go back to the login page.</p>
 	<a href='http://localhost:8080/Camagru/app/views/login.php'>Camagru</a>
 	";
 	$headers = "change@camagru.com";
 	mail($to, $subject, $message, $headers);
-	header("Location: ../views/login.php");
+	include_once "logout.controllers.php";
+}
+
+if (isset($_POST["cEmail"]))
+{
+	$user = $_SESSION['username'];
+	$email = htmlentities($_POST["bemail"]);
+
+	duplicator(" ", $email, $db);
+
+	$sql = "UPDATE `usrtbl` SET `email` = :email WHERE `username` = :username;";
+
+	$stmt = $db->prepare($sql);
+	$stmt->execute(array(":username" => $user, ":email" => $email));
+
+	session_unset();
+	session_destroy();
+	sendEmail($email);
 }
 ?>
