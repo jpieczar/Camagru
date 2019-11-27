@@ -43,7 +43,6 @@ try /* Create table imgtbl. */
     (
         `id`			INT(11) auto_increment PRIMARY KEY NOT NULL,
         `username`		TINYTEXT NOT NULL, /* Should match the user\'s username. */
-        `path`          TINYTEXT NOT NULL, /* Encode/decode the string. */
         `create_date`	DATETIME DEFAULT current_timestamp
     )";
     $db->exec($query);

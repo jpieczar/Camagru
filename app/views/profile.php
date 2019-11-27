@@ -33,8 +33,8 @@
 				<input type="submit" name="cPassword" title="Change password" value="Change Password">
 			</form>
 			<form action="../controllers/profile.controllers.php" method="post" class="form">
-			*>>	<input type="text" name="busername" title="Change username" placeholder="Change Username">
-			*>>	<input type="submit" name="cUsername" title="Change username" value="Change Username">
+				<input type="text" name="busername" title="Change username" placeholder="Change Username">
+				<input type="submit" name="cUsername" title="Change username" value="Change Username">
 			</form>
 		</div>
 	</body>
