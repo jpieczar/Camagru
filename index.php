@@ -6,7 +6,7 @@
 	?>
 	<head>
 		<title>Camagru</title>
-		<link rel="stylesheet" type= "text/css" href="css/style.css">
+		<link rel="stylesheet" type= "text/css" href="/Camagru/css/style.css">
 	</head>
 	<body>
 		<div class="main_centre_top"></div>

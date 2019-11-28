@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<title>ERROR!!!</title>
-		<link rel="stylesheet" type= "text/css" href="style.css">
+		<link rel="stylesheet" type= "text/css" href="/Camagru/css/style.css">
 	</head>
 	<body>
 		<div class="main_centre_top"></div>
