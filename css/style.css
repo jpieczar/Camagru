@@ -32,8 +32,12 @@ a{
 
 .camera_icon {
 	margin-top: 5px;
-	margin-left: 600px;
+	margin-left: 45%;
 	z-index: 2;
+}
+
+.snap {
+	margin-left: 45%;
 }
 
 .register {

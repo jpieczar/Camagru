@@ -18,15 +18,22 @@
 			<div class="frame">
 				<video id="video" width="500px" height="500px" class="polaroid"></video>
 			</div>
-				<form action="../controllers/camera.controllers.php" method="post">
-					<input type="submit" name="Snap" title="Take picture" value="Take picture">
-				</form>
-				<form action="../controllers/camera.controllers.php" method="post">
+			<div>
+				<button id="photo_button" class="snap">
+					>>>>SNAP<<<<
+				</button>
+				<button id="photo_button" class="snap">
+					>>>>CLEAR<<<<
+				</button>
+			</div>
+				<!-- <form action="../controllers/camera.controllers.php" method="post">
 					<input type="file" name="file">
 					<input type="submit" name="Upload" title="Upload image" value="Upload image">
-				</form>
+				</form> -->
 			<!-- Camera stuff here. -->
-			<div class="main_centre_small"></div>
+			<div class="main_centre_small">
+				<canvas id="canvas"></canvas>
+			</div>
 			<div class="main_centre_top"></div> <!-- This is just a spacer -->
 	</body>
 </html>
