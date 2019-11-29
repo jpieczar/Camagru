@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>Camagru test</title>
-		<link rel="stylesheet" href="css/istyle.css">
+		<link rel="stylesheet" href="/Camagru/css/istyle.css">
 	</head>
 	<body>
 		<div class="top-container">
