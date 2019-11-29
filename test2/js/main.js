@@ -37,12 +37,20 @@ video.addEventListener('canplay', function(e) {
 	}
 }, false);
 
+/* Photo button event. */
 photoButton.addEventListener('click', function(e) {
 	takePicture();
 
 	e.preventDefault();
 }, false);
 
+/* Clear event. */
+clearButton.addEventListener('click', function(e) {
+	/* Clean photos. Note that this clears all the photos taken*/
+	photos.innerHTML = '';
+});
+
+/* Take a picture from canvas. */
 function takePicture() {
 	/* Create canvas. */
 	const context = canvas.getContext('2d');
@@ -53,6 +61,18 @@ function takePicture() {
 		/* Draw video onto the canvas. */
 		context.drawImage(video, 0, 0, width, height);
 
+		/* Create image from the canvas. */
+		const imgUrl = canvas.toDataURL('image/png');
 
+		// console.log(imgUrl); /* This displays the image data as text in the console. */
+
+		/* Create img element. */
+		const img = document.createElement('img');
+	
+		/* Set img src. */
+		img.setAttribute('src', imgUrl);
+	
+		/* Take more than one picture. Adds to the bottom. */
+		photos.appendChild(img);
 	}
 }

@@ -1,0 +1,14 @@
+#photos {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 100px;
+}
+
+#photos img {
+	width: 100%;
+	border: 3px #000000 solid;
+}
+
+#canvas {
+	display: none;
+}
