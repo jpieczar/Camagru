@@ -19,17 +19,17 @@
 			<button id="photo-button">>>>>SNAP<<<<</button>
 			<button id="clear-button">>>>>CLEAR<<<<</button>
 			<button id="save-button">>>>>SAVE<<<<</button>
-			<canvas id="canvas" style="position: absolute; top: 500px; left: 250px; width: 500px;"></canvas>
 			<canvas id="overlay" style="position: absolute; top: 500px; left: 250px; width: 500px;"></canvas>
+			<canvas id="canvas" style="position: absolute; top: 500px; left: 250px; width: 500px;"></canvas>
 		</div>
-		<div class="bottom-container">
-			<!-- <div id="photos"></div> -->
-		</div>
+		<!-- <div class="bottom-container">
+			<div id="photos"></div>
+		</div> -->
 		<div>
-			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/recycle.png" alt="404_recycle" title="recycle">
-			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/comedy.png" alt="404_comedy" title="comedy">
-			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/beans.png" alt="404_beans" title="beans">
-			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/pepe.png" alt="404_pepe" title="pepe">
+			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/recycle.png" id="recycle" onclick="addSticker(this.id)" alt="404_recycle" title="recycle">
+			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/comedy.png" id="comedy" onclick="addSticker(this.id)" alt="404_comedy" title="comedy">
+			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/beans.png" id="beans" onclick="addSticker(this.id)" alt="404_beans" title="beans">
+			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/pepe.png" id="pepe" onclick="addSticker(this.id)" alt="404_pepe" title="pepe">
 		</div>
 		<script src="/Camagru/test2/js/main.js"></script>
 	</body>

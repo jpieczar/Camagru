@@ -7,7 +7,7 @@ let width = 500,
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const photos = document.getElementById('photos');
-// const sticker = document.getElementById('sticker');
+const overlay = document.getElementById('overlay');
 const photoButton = document.getElementById('photo-button');
 const clearButton = document.getElementById('clear-button');
 // const saveButton = document.getElementById('save-button');
@@ -91,4 +91,11 @@ function takePicture() {
 			/* Take more than one picture. Adds to the bottom. */
 			// photos.appendChild(img);
 	}
+}
+
+function addSticker(sid) {
+	document.getElementById(sid);
+	sticker = new Image; /* Creates a blank image template. */
+	sticker.src = "/Camagru/img_resources/stickers/"+sid+".png";
+	overlay.getContext('2d').drawImage(sticker, 0, 0);
 }
