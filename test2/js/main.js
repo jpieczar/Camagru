@@ -7,8 +7,10 @@ let width = 500,
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const photos = document.getElementById('photos');
+// const sticker = document.getElementById('sticker');
 const photoButton = document.getElementById('photo-button');
 const clearButton = document.getElementById('clear-button');
+// const saveButton = document.getElementById('save-button');
 
 navigator.mediaDevices.getUserMedia({video: true, audio: false}	
 )
@@ -44,10 +46,16 @@ photoButton.addEventListener('click', function(e) {
 	e.preventDefault();
 }, false);
 
+// saveButton.addEventListener('click', function(e) {
+// 	/* Save the image. */
+// })
+
 /* Clear event. */
 clearButton.addEventListener('click', function(e) {
-	/* Clean photos. Note that this clears all the photos taken*/
+	/* Clean photos. Note that this clears all the photos taken and stickers too. */
 	photos.innerHTML = '';
+	canvas.style.display = '';
+	// sticker.style.display = '';
 });
 
 /* Take a picture from canvas. */
@@ -58,6 +66,10 @@ function takePicture() {
 		/* Set canvas props. */
 		canvas.width = width;
 		canvas.height = height;
+
+		/* "Demirrors" the output. */
+		// context.setTransform(-1, 0, 0, 1, canvas.width, 0);
+
 		/* Draw video onto the canvas. */
 		context.drawImage(video, 0, 0, width, height);
 
@@ -66,13 +78,17 @@ function takePicture() {
 
 		// console.log(imgUrl); /* This displays the image data as text in the console. */
 
-		/* Create img element. */
-		const img = document.createElement('img');
+		/* The bottom few create an actual image that you can see. */
+			/* Create img element. */
+			// const img = document.createElement('img');
 	
-		/* Set img src. */
-		img.setAttribute('src', imgUrl);
+			/* Set img src. */
+			// img.setAttribute('src', imgUrl);
+
+			/* Makes canvas visible. */ /* This is independent from the other 3. */
+			canvas.style.display = "block";
 	
-		/* Take more than one picture. Adds to the bottom. */
-		photos.appendChild(img);
+			/* Take more than one picture. Adds to the bottom. */
+			photos.appendChild(img); /* When used with the above line, it continuously takes new pictures. */
 	}
 }

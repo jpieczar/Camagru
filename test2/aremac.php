@@ -1,3 +1,13 @@
+<!-- 
+	* When snap is pressed, a photo is taked and then
+	- sent to an editing page.
+	* Perhaps try having two canvases.
+	* You can super impose the two canvases on the new
+	- page. Perhaps this can be done before in the camera
+	- app page and then the final product sent to a
+	- submit page (Villager hhmmmm...).
+-->
+
 <html>
 	<head>
 		<title>Camagru test</title>
@@ -5,17 +15,21 @@
 	</head>
 	<body>
 		<div class="top-container">
-			<video id="video">No video</video>
-			<button id="photo-button">
-				>>>>SNAP<<<<
-			</button>
-			<button id="clear-button">
-				>>>>CLEAR<<<<
-			</button>
-			<canvas id="canvas"></canvas>
+			<video id="video" style="position: absolute; top: 500px; left: 250px; width: 500px ;">No video</video>
+			<button id="photo-button">>>>>SNAP<<<<</button>
+			<button id="clear-button">>>>>CLEAR<<<<</button>
+			<button id="save-button">>>>>SAVE<<<<</button>
+			<canvas id="canvas" style="position: absolute; top: 500px; left: 250px; width: 500px ;"></canvas>
+			<!-- <canvas id="overlay" style="position: absolute; top: 0; left: 0; width: 100% ;"></canvas> -->
 		</div>
 		<div class="bottom-container">
-			<div id="photos"></div>
+			<!-- <div id="photos"></div> -->
+		</div>
+		<div>
+			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/recycle.png" alt="404_recycle" title="recycle">
+			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/comedy.png" alt="404_comedy" title="comedy">
+			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/beans.png" alt="404_beans" title="beans">
+			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/pepe.png" alt="404_pepe" title="pepe">
 		</div>
 		<script src="/Camagru/test2/js/main.js"></script>
 	</body>
