@@ -53,8 +53,8 @@ photoButton.addEventListener('click', function(e) {
 /* Clear event. */
 clearButton.addEventListener('click', function(e) {
 	/* Clean photos. Note that this clears all the photos taken and stickers too. */
-	photos.innerHTML = '';
-	canvas.style.display = '';
+	// photos.innerHTML = '';
+	canvas.style.display = 'none';
 	// sticker.style.display = '';
 });
 
@@ -89,6 +89,6 @@ function takePicture() {
 			canvas.style.display = "block";
 	
 			/* Take more than one picture. Adds to the bottom. */
-			photos.appendChild(img); /* When used with the above line, it continuously takes new pictures. */
+			// photos.appendChild(img);
 	}
 }

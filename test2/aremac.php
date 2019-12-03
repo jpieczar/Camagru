@@ -19,8 +19,8 @@
 			<button id="photo-button">>>>>SNAP<<<<</button>
 			<button id="clear-button">>>>>CLEAR<<<<</button>
 			<button id="save-button">>>>>SAVE<<<<</button>
-			<canvas id="canvas" style="position: absolute; top: 500px; left: 250px; width: 500px ;"></canvas>
-			<!-- <canvas id="overlay" style="position: absolute; top: 0; left: 0; width: 100% ;"></canvas> -->
+			<canvas id="canvas" style="position: absolute; top: 500px; left: 250px; width: 500px;"></canvas>
+			<canvas id="overlay" style="position: absolute; top: 500px; left: 250px; width: 500px;"></canvas>
 		</div>
 		<div class="bottom-container">
 			<!-- <div id="photos"></div> -->
