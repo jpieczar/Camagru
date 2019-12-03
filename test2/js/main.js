@@ -6,11 +6,11 @@ let width = 500,
 /* DOM elements. */
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
-const photos = document.getElementById('photos');
+// const photos = document.getElementById('photos');
 const overlay = document.getElementById('overlay');
 const photoButton = document.getElementById('photo-button');
 const clearButton = document.getElementById('clear-button');
-// const saveButton = document.getElementById('save-button');
+const saveButton = document.getElementById('save-button');
 
 navigator.mediaDevices.getUserMedia({video: true, audio: false}	
 )
@@ -55,7 +55,9 @@ clearButton.addEventListener('click', function(e) {
 	/* Clean photos. Note that this clears all the photos taken and stickers too. */
 	// photos.innerHTML = '';
 	canvas.style.display = 'none';
-	// sticker.style.display = '';
+	const stick = overlay.getContext('2d');
+	// overlay.style.display = 'none';
+	stick.clearRect(0, 0, width, height);
 });
 
 /* Take a picture from canvas. */
@@ -94,8 +96,33 @@ function takePicture() {
 }
 
 function addSticker(sid) {
-	document.getElementById(sid);
+	// document.getElementById(sid);
+	// sticker = new Image; /* Creates a blank image template. */
+	// sticker.src = "/Camagru/img_resources/stickers/"+sid+".png";
+	// overlay.getContext('2d').drawImage(sticker, 0, 0, width, height);
+
+	const stick = overlay.getContext('2d');
+
+	overlay.width = width;
+	overlay.height = height;
+
 	sticker = new Image; /* Creates a blank image template. */
 	sticker.src = "/Camagru/img_resources/stickers/"+sid+".png";
-	overlay.getContext('2d').drawImage(sticker, 0, 0);
+
+	if (sid == "beans")
+		stick.drawImage(sticker, 0, 0, 250, 250);
+	else if (sid == "comedy")
+		stick.drawImage(sticker, 190, 110, 180, 180);
+	else
+		stick.drawImage(sticker, 0, 0, width, height);
 }
+
+saveButton,addEventListener('click', function() {
+	var canURL = canvas.toDataURL('image/png');
+	var ovlURL = overlay.toDataURL('image/png');
+
+	const url = "/Camagru/test2/upload.php";
+
+	var ajax = new XMLHttpRequest();
+	var hold = "imgURL"+canURL+"&ovlURL"+ovlURL;
+});
