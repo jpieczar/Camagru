@@ -124,5 +124,12 @@ saveButton,addEventListener('click', function() {
 	const url = "/Camagru/test2/upload.php";
 
 	var ajax = new XMLHttpRequest();
-	var hold = "imgURL"+canURL+"&ovlURL"+ovlURL;
+	var urlValues = "imgURL="+canURL+"&ovlURL="+ovlURL;
+	ajax.open("POST", url, true);
+	/*
+	 * Server request should be asynchronous, this is why the 3rd variable is true.
+	 * This means that the js does not haveto wait for server response.
+	*/
+	ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	ajax.send(urlValues);
 });
