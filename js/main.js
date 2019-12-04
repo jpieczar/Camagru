@@ -152,7 +152,7 @@ saveButton.addEventListener('click', function() {
 	var xhttp = new XMLHttpRequest();
 	// var urlValues = ("imgURL="+canURL+"&ovlURL="+ovlURL);
 
-	xhttp.open("POST", "/Camagru/app/controllers/camera.controllers.php", true);
+	xhttp.open("POST", "/Camagru/test2/upload.php", true);
 	/*
 	 * Server request should be asynchronous, this is why the 3rd variable is true.
 	 * This means that the js does not haveto wait for server response.
