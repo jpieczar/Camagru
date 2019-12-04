@@ -1,18 +1,3 @@
-<!-- 
-	* When snap is pressed, a photo is taked and then
-	- sent to an editing page.
-	* Perhaps try having two canvases.
-	* You can super impose the two canvases on the new
-	- page. Perhaps this can be done before in the camera
-	- app page and then the final product sent to a
-	- submit page (Villager hhmmmm...).
--->
-
-<!--
-	* When snap, take and save the picture. The snap
-	- button with serve its task as well as that of the
-	- save function.
--->
 <html>
 	<head>
 		<title>Camagru test</title>

@@ -93,7 +93,7 @@ function takePicture() {
 			/* Take more than one picture. Adds to the bottom. */
 			// photos.appendChild(img);
 	}
-}
+};
 
 function addSticker(sid) {
 	// document.getElementById(sid);
@@ -117,19 +117,52 @@ function addSticker(sid) {
 		stick.drawImage(sticker, 0, 0, width, height);
 }
 
-saveButton,addEventListener('click', function() {
-	var canURL = canvas.toDataURL('image/png');
-	var ovlURL = overlay.toDataURL('image/png');
+// saveButton.addEventListener('click', function() {
+// 	var canURL = canvas.toDataURL('image/png');
+	
+// 	var ovlURL = overlay.toDataURL('image/png');
+	
+// 	const url = "/Camagru/test2/upload.php";
 
-	const url = "/Camagru/test2/upload.php";
+// 	var ajax = new XMLHttpRequest();
+// 	var urlValues = "imgURL="+canURL+"&ovlURL="+ovlURL;
 
-	var ajax = new XMLHttpRequest();
-	var urlValues = "imgURL="+canURL+"&ovlURL="+ovlURL;
-	ajax.open("POST", url, true);
+// 	ajax.open("POST", url, true);
+// 	/*
+// 	 * Server request should be asynchronous, this is why the 3rd variable is true.
+// 	 * This means that the js does not haveto wait for server response.
+// 	*/
+// 	ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	
+// 	// ajax.onreadystatechange = function(){
+// 	// 	if(ajax.status == 200){
+// 	// 		console.log(this.responseText);
+// 	// 	}
+// 	// };
+// 	if (ajax.send(urlValues))
+// 		{console.log("success")}
+// 	else
+// 	{console.log("flop")}
+// });
+
+saveButton.addEventListener('click', function() {
+	const canURL = canvas.toDataURL('image/png');
+	const ovlURL = overlay.toDataURL('image/png');
+
+	var xhttp = new XMLHttpRequest();
+	// var urlValues = ("imgURL="+canURL+"&ovlURL="+ovlURL);
+
+	xhttp.open("POST", "/Camagru/test2/upload.php", true);
 	/*
 	 * Server request should be asynchronous, this is why the 3rd variable is true.
 	 * This means that the js does not haveto wait for server response.
 	*/
-	ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	ajax.send(urlValues);
+	xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+	xhttp.onreadystatechange = function(){
+		if(xhttp.status == 200){
+			console.log(this.responseText);
+		}
+	};
+	xhttp.send("imgURL=" + canURL + "&ovlURL=" + ovlURL);
 });
