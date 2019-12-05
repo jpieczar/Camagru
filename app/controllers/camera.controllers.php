@@ -23,7 +23,7 @@ if (isset($_POST["imgURL"]) && isset($_POST["ovlURL"]))
 	$pic = imagecreatefromstring($imgfrombase);
 	$sticker = imagecreatefromstring($stifrombase);
 	imagecopy($pic, $sticker, 0, 0, 0, 0, imagesx($pic), imagesy($pic));
-	imagepng($pic, "/goinfre/jpieczar/Desktop/Mamp/apache2/htdocs/Camagru/photo_store/".$imgname);
+	imagepng($pic, "/goinfre/jpieczar/Desktop/Mamp/apache2/htdocs/Camagru/app/img_database/".$imgname);
 }
 
 ?>

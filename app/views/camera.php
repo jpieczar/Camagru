@@ -16,9 +16,9 @@
 	<body>
 		<div class="main_centre_top"></div>
 			<div class="frame">
-				<video id="video" style="position: absolute; top: 200px; left: 570px; width: 500px ;"></video>
-				<canvas id="canvas" style="position: absolute; top: 200px; left: 570px; width: 500px;"></canvas>
-				<canvas id="overlay" style="position: absolute; top: 200px; left: 570px; width: 500px;"></canvas>
+				<video id="video" style="position: absolute; margin-left: 25px; margin-top: 50px; width: 500px ;"></video>
+				<canvas id="canvas" style="position: absolute; margin-left: 25px; margin-top: 50px; width: 500px;"></canvas>
+				<canvas id="overlay" style="position: absolute; margin-left: 25px; margin-top: 50px; width: 500px;"></canvas>
 			</div>
 			<div>
 				<button id="photo-button" class="snap">>>>>SNAP<<<<</button>
