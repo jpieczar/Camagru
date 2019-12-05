@@ -1,10 +1,12 @@
 body {
-	margin: auto;
+	/* margin: auto;
 	background-image: url("../img_resources/background/teo-duldulao-4op9_2Bt2Eg-unsplash.jpg"); 
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-attachment: fixed; 
+	background-attachment: fixed;  */
+	background-image: url("../img_resources/background/grass.jpg");
+	background-repeat: repeat;
 }
 
 a{
@@ -101,6 +103,7 @@ a{
 }
 
 .frame {
+	justify-content: center;
 	width: 550px;
 	height: 600px;
 	border: 10px solid white;
@@ -116,4 +119,11 @@ a{
 form {
 	display: flex;
 	justify-content: center;
+}
+
+.feed {
+	/* style="position: absolute; top: 200px; left: 705px; width: 500px ;" */
+	margin-left: 5%;
+	margin-top: 5%;
+	width: 500px;
 }
