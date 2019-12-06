@@ -5,7 +5,7 @@
 	/* This prevents unauthorised page access. */
 	if (!isset($_SESSION["username"]))
 	{
-		header("Location: ../../index.php");
+		header("Location: /Camagru/app/views/login.php");
 	}
 ?>
 <html>

@@ -117,34 +117,6 @@ function addSticker(sid) {
 		stick.drawImage(sticker, 0, 0, width, height);
 }
 
-// saveButton.addEventListener('click', function() {
-// 	var canURL = canvas.toDataURL('image/png');
-	
-// 	var ovlURL = overlay.toDataURL('image/png');
-	
-// 	const url = "/Camagru/test2/upload.php";
-
-// 	var ajax = new XMLHttpRequest();
-// 	var urlValues = "imgURL="+canURL+"&ovlURL="+ovlURL;
-
-// 	ajax.open("POST", url, true);
-// 	/*
-// 	 * Server request should be asynchronous, this is why the 3rd variable is true.
-// 	 * This means that the js does not haveto wait for server response.
-// 	*/
-// 	ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	
-// 	// ajax.onreadystatechange = function(){
-// 	// 	if(ajax.status == 200){
-// 	// 		console.log(this.responseText);
-// 	// 	}
-// 	// };
-// 	if (ajax.send(urlValues))
-// 		{console.log("success")}
-// 	else
-// 	{console.log("flop")}
-// });
-
 saveButton.addEventListener('click', function() {
 	const canURL = canvas.toDataURL('image/png');
 	const ovlURL = overlay.toDataURL('image/png');
@@ -152,7 +124,7 @@ saveButton.addEventListener('click', function() {
 	var xhttp = new XMLHttpRequest();
 	// var urlValues = ("imgURL="+canURL+"&ovlURL="+ovlURL);
 
-	xhttp.open("POST", "/Camagru/test2/upload.php", true);
+	xhttp.open("POST", "/Camagru/app/controllers/camera.controllers.php", true);
 	/*
 	 * Server request should be asynchronous, this is why the 3rd variable is true.
 	 * This means that the js does not haveto wait for server response.

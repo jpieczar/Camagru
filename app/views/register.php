@@ -1,6 +1,11 @@
 <?php
+	include_once "../controllers/session.controllers.php";
 	require "header.html";
 	include_once "../controllers/register.controllers.php";
+	if (isset($_SESSION["username"]))
+	{
+		header("Location: /Camagru/app/views/profile.php");
+	}
 ?>
 <html>
 	<head>

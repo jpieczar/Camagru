@@ -5,19 +5,22 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;  */
-	background-image: url("../img_resources/background/grass.jpg");
+	background-image: url("../img_resources/background/garish.jpg");
 	background-repeat: repeat;
 }
 
 a{
+	color: yellow;
 	text-decoration: none;
 }
 .main_top_logo {
+	color: yellow;
 	margin-left: 50px;
 	font-family: 'Comic Sans MS', cursive;
 }
 
 .login {
+	color: yellow;
 	margin-right: 25px;
 	font-family: 'Comic Sans MS', cursive;
 }
@@ -43,6 +46,7 @@ a{
 }
 
 .register {
+	color: yellow;
 	font-family: 'Comic Sans MS', cursive;
 }
 
@@ -50,7 +54,9 @@ a{
 	position: absolute;
 	display: flex;
 	position: fixed;
-	background-color: rgb(255, 255, 255);;
+	/* background-color: rgb(255, 255, 255); */
+	/* background-color: rgb(205, 211, 218); */
+	background-image: url("/Camagru/img_resources/background/trip_tron_png.jpg");
 	width: 100%;
 	height: 70px;
 	box-shadow: 10px 10px 15px black;
@@ -61,7 +67,9 @@ a{
 	position: absolute;
 	display: flex;
 	position: fixed;
-	background-color: rgb(255, 255, 255);;
+	/* background-color: rgb(255, 255, 255); */
+	/* background-color: rgb(205, 211, 218); */
+	background-image: url("/Camagru/img_resources/background/trip_tron_png.jpg");
 	width: 100%;
 	height: 30px;
 	box-shadow: 10px -10px 15px black;
@@ -70,6 +78,7 @@ a{
 }
 
 .copy {
+	color: yellow;
 	margin-top: 2px;
 	margin-left: 55px;
 	font-family: 'Comic Sans MS', cursive;
@@ -82,8 +91,10 @@ a{
 
 .main_centre {
 	margin: auto;
-	background-color: ghostwhite;
-	opacity: 0.8;
+	/* background-color: ghostwhite; */
+	background-image: url("../img_resources/background/grass.jpg");
+	background-repeat: repeat;
+	opacity: 0.9;
 	width: 900px;
 	height: 100px;
 	border-radius: 10px;
@@ -93,8 +104,10 @@ a{
 
 .main_centre_small {
 	margin: auto;
-	background-color: ghostwhite;
-	opacity: 0.8;
+	/* background-color: ghostwhite; */
+	background-image: url("../img_resources/background/grass.jpg");
+	background-repeat: repeat;
+	opacity: 0.9;
 	width: 900px;
 	height: 750px;
 	border-radius: 10px;
@@ -126,4 +139,13 @@ form {
 	margin-left: 5%;
 	margin-top: 5%;
 	width: 500px;
+}
+
+.rainbow {
+	height: 19px;
+    background: red;
+    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
 }
