@@ -9,6 +9,7 @@
 
 	$stmt = $db->prepare($sql);
 	$stmt->execute(array(":email" => $email));
+	// mkdir('', 0777, false);
 ?>
 <html>
 	<head>

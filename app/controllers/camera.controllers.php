@@ -13,7 +13,7 @@ if (isset($_POST["imgURL"]) && isset($_POST["ovlURL"]) && isset($_SESSION["id"])
 {
 	$img = $_POST["imgURL"];
 	$sti = $_POST["ovlURL"];
-	$imgname = $_SESSION["id"]."_camagru".uniqid("").".png";
+	$imgname = $_SESSION["id"]."_camagru_".uniqid("").".png";
 	$imgURL = str_replace("data:image/png;base64,", "", $img);
 	$imgURL = str_replace(" ", "+", $imgURL);
 	$imgfrombase = base64_decode($imgURL);

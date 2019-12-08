@@ -29,7 +29,9 @@ if (isset($_POST["submit"]))
 
 		$stmt = $db->prepare($sql);
 		$stmt->execute(array(":username" => $username, ":email" => $email, ":passwor" => $password));
-
+		
+		// mkdir("/home/jono_p/Documents/Lamp/apache2/htdocs/Camagru/img/".$username, 0777, false); <<<***<<<***<<<***<<<***
+		
 		// echo "<p style='color:green; font-weight:bold;'>User added</p>";
 		sendEmail($email);
 	}

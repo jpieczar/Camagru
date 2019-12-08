@@ -27,6 +27,7 @@ try /* Create table usrtbl. */
         `username`		TINYTEXT NOT NULL, /* 6+ characters long. */
         `email`			TINYTEXT NOT NULL, /* Should follow email format. */
         `pass`			TINYTEXT NOT NULL, /* Encode/decode the string. */
+        -- `img`           INT(11) NOT NULL, /* This shows how many posts the user has. */
         `create_date`	DATETIME DEFAULT current_timestamp
     )";
     $db->exec($query);
@@ -41,8 +42,8 @@ try /* Create table imgtbl. */
 {
     $query = "CREATE TABLE IF NOT EXISTS `imgtbl`
     (
-        `id`			INT(11) auto_increment PRIMARY KEY NOT NULL,
-        `username`		TINYTEXT NOT NULL, /* Should match the user\'s username. */
+        `id`			INT(11) UNIQUE NOT NULL, /* user id. */
+        `num`	        INT(11) auto_increment PRIMARY KEY NOT NULL, /* POst number for particular number. */
         `create_date`	DATETIME DEFAULT current_timestamp
     )";
     $db->exec($query);
