@@ -1,6 +1,8 @@
 <?php
 
 include_once "session.controllers.php";
+include_once "email.controllers.php";
+include_once "../../config/connection.php";
 
 /*
  * $id = $_SESSION["id"];
@@ -13,7 +15,7 @@ if (isset($_POST["imgURL"]) && isset($_POST["ovlURL"]) && isset($_SESSION["id"])
 {
 	$img = $_POST["imgURL"];
 	$sti = $_POST["ovlURL"];
-	$imgname = $_SESSION["id"]."_camagru".uniqid("").".png";
+	$imgname = "camagru".uniqid("").".png";
 	$imgURL = str_replace("data:image/png;base64,", "", $img);
 	$imgURL = str_replace(" ", "+", $imgURL);
 	$imgfrombase = base64_decode($imgURL);
@@ -24,6 +26,12 @@ if (isset($_POST["imgURL"]) && isset($_POST["ovlURL"]) && isset($_SESSION["id"])
 	$sticker = imagecreatefromstring($stifrombase);
 	imagecopy($pic, $sticker, 0, 0, 0, 0, imagesx($pic), imagesy($pic));
 	imagepng($pic, "/goinfre/jpieczar/Desktop/Mamp/apache2/htdocs/Camagru/app/img_database/".$imgname);
+
+	$sql = "INSERT INTO `imgtbl` (`id`, `postid`)
+		VALUES (:id, :postid);";
+
+		$stmt = $db->prepare($sql);
+		$stmt->execute(array(":id" => $_SESSION['id'], ":postid" => $imgname));
 }
 // "camagru".uniqid("").
 ?>

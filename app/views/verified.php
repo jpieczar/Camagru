@@ -25,5 +25,5 @@
 	</body>
 </html>
 <?php
-	require "footer.html";
+	require "footer.php";
 ?>

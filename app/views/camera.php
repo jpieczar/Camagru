@@ -1,7 +1,7 @@
 <?php
 	include_once "../controllers/session.controllers.php";
 	require "header.html";
-	include_once "/Camagru/app/controllers/session.controllers.php";
+	include_once "../controllers/session.controllers.php";
 
 
 	if (!isset($_SESSION["username"]))
@@ -47,5 +47,5 @@
 	</body>
 </html>
 <?php
-	require "footer.html";
+	require "footer.php";
 ?>

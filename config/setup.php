@@ -41,8 +41,8 @@ try /* Create table imgtbl. */
 {
     $query = "CREATE TABLE IF NOT EXISTS `imgtbl`
     (
-        `id`			INT(11) auto_increment PRIMARY KEY NOT NULL,
-        `username`		TINYTEXT NOT NULL, /* Should match the user\'s username. */
+        `id`			INT(11) NOT NULL, /* User id */
+        `postid`		CHAR(255) PRIMARY KEY NOT NULL, /* Should match the user\'s username. */
         `create_date`	DATETIME DEFAULT current_timestamp
     )";
     $db->exec($query);

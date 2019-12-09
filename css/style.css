@@ -94,7 +94,7 @@ a{
 	/* background-color: ghostwhite; */
 	background-image: url("../img_resources/background/grass.jpg");
 	background-repeat: repeat;
-	opacity: 0.9;
+	/* opacity: 0.9; */
 	width: 900px;
 	height: 100px;
 	border-radius: 10px;
