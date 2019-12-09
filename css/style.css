@@ -107,7 +107,7 @@ a{
 	/* background-color: ghostwhite; */
 	background-image: url("../img_resources/background/grass.jpg");
 	background-repeat: repeat;
-	opacity: 0.9;
+	/* opacity: 0.9; */
 	width: 900px;
 	height: 750px;
 	border-radius: 10px;
@@ -125,6 +125,10 @@ a{
 	box-shadow: 25px 25px 15px black;
 }
 
+.thumb {
+	padding: 15px;
+}
+
 .polaroid {
 	margin-left: 25px;
 }
@@ -135,17 +139,15 @@ form {
 }
 
 .feed {
-	/* style="position: absolute; top: 200px; left: 705px; width: 500px ;" */
-	margin-left: 5%;
-	margin-top: 5%;
-	width: 500px;
-}
-
-.rainbow {
-	height: 19px;
-    background: red;
-    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
-    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
-    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
-    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+	justify-content: center;
+	margin: auto;
+	/* background-color: ghostwhite; */
+	background-image: url("../img_resources/background/grass.jpg");
+	background-repeat: repeat;
+	/* opacity: 0.9; */
+	width: 900px;
+	height: 1000px;
+	border-radius: 10px;
+	border: solid 3px #cccccc;
+	box-shadow: 10px 10px 15px black;
 }

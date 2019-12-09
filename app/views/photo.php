@@ -20,6 +20,7 @@
 			<div class="frame">
 				<canvas id="canvas" style="position: absolute; margin-left: 25px; margin-top: 50px; width: 500px;"></canvas>
 				<!-- Have the picture positioned her. -->
+				<button><img src="/Camagru/img_resources/stickers/upvote.gif" alt="404-upvote"></button>
 			</div>
 			<div class="main_centre_top"></div> <!-- This is just a spacer -->
 			<!-- <script src="/Camagru/js/main.js"></script> -->

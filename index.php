@@ -10,13 +10,13 @@
 	</head>
 	<body>
 		<div class="main_centre_top"></div>
-		<div class="main_centre">
+		<div class="feed">
 		<?php
 			$images = glob("/goinfre/jpieczar/Desktop/Mamp/apache2/htdocs/Camagru/app/img_database/"."*.png");
 			foreach ($images as $pic)
 			{
 				$pic = explode('/', $pic)[10];
-				echo "<img src='app/img_database/".$pic."' width='450px'>";
+				echo "<img class='thumb' src='app/img_database/".$pic."' width='400px'>";
 			}
 		?>
 		</div>
