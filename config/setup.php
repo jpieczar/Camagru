@@ -42,7 +42,9 @@ try /* Create table imgtbl. */
     $query = "CREATE TABLE IF NOT EXISTS `imgtbl`
     (
         `id`			INT(11) NOT NULL, /* User id */
-        `postid`		CHAR(255) PRIMARY KEY NOT NULL, /* Should match the user\'s username. */
+        `postid`		CHAR(255) NOT NULL, /* Should match the user\'s username. */
+        `num`          INT(11) auto_increment PRIMARY KEY NOT NULL,
+        `likes`         INT(11) NOT NULL DEFAULT 0, /* This stores the likes. */
         `create_date`	DATETIME DEFAULT current_timestamp
     )";
     $db->exec($query);

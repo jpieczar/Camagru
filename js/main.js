@@ -127,7 +127,7 @@ saveButton.addEventListener('click', function() {
 	xhttp.open("POST", "/Camagru/app/controllers/camera.controllers.php", true);
 	/*
 	 * Server request should be asynchronous, this is why the 3rd variable is true.
-	 * This means that the js does not haveto wait for server response.
+	 * This means that the js does not have to wait for server response.
 	*/
 	xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 

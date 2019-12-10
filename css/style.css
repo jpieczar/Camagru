@@ -39,6 +39,7 @@ a{
 	margin-top: 5px;
 	margin-left: 45%;
 	z-index: 2;
+	box-shadow: -10px -10px 10px yellow;
 }
 
 .snap {
@@ -146,8 +147,7 @@ form {
 	background-repeat: repeat;
 	/* opacity: 0.9; */
 	width: 900px;
-	height: 1000px;
 	border-radius: 10px;
-	border: solid 3px #cccccc;
-	box-shadow: 10px 10px 15px black;
+	border: solid 3px limegreen;
+	box-shadow: 10px 10px 3px black;
 }

@@ -12,13 +12,16 @@
 		<div class="main_centre_top"></div>
 		<div class="feed">
 		<?php
-			$images = glob("/goinfre/jpieczar/Desktop/Mamp/apache2/htdocs/Camagru/app/img_database/"."*.png");
-			foreach ($images as $pic)
-			{
-				$pic = explode('/', $pic)[10];
-				echo "<img class='thumb' src='app/img_database/".$pic."' width='400px'>";
-			}
+        $x = 0;
+        echo $_SESSION['test'];
+		if(empty($result))
+			echo "<h1 class='main_top_logo'>Just grass and no posts...</h1>";
+		else if (!empty($result))
+		{
+			// for ($i = 0; $i < $this->postsOD; $i++):
+		}
 		?>
 		</div>
+		<script src="/Camagru/js/scroll.js"></script>
 	</body>
 </html>

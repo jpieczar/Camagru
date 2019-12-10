@@ -6,7 +6,6 @@
 
 	if (!isset($_SESSION["username"]))
 	{
-		/* Include an alert (Please login) */
 		header("Location: /Camagru");
 	}
 ?>
