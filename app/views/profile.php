@@ -18,8 +18,9 @@
 		<div class="main_centre_small">
 			<h1 class="main_top_logo">Welcome</h1>
 			<?php
-				echo $_SESSION['username'];
+				echo "<h1 class='main_top_logo'>".$_SESSION['username']."</h1>";
 			?>
+			<img src="/Camagru/img_resources/stickers/ufo.gif" alt="404-ufo" width="150px">
 			<form action="../controllers/logout.controllers.php" method="post" class="form">
 				<input type="submit" name="submit" title="logout" value="Logout">
 			</form>

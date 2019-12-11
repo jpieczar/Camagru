@@ -1,5 +1,5 @@
 <?php
-include_once "session.controllers.php";
+// include_once "session.controllers.php";
 function getPosts()
 {
 	$images = glob("/goinfre/jpieczar/Desktop/Mamp/apache2/htdocs/Camagru/app/img_database/"."*.png");
@@ -17,8 +17,8 @@ function totalPosts()
 	return count($images);
 }
 
-function indexAction()
-{
+// function indexAction()
+// {
 	
 	$res = getPosts();
 	$count = totalPosts();
@@ -35,9 +35,10 @@ function indexAction()
 		else
 			$postsOD = $_POST['displayed_posts'] + $lim;
 	}
+	$_SESSION['hold1'] = $postsOD;
+// }
 
-}
-
-$_SESSION['test'] = "hi";
+// $_SESSION['test'] = "hi";
+// var_dump($_SESSION);
 
 ?>

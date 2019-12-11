@@ -18,12 +18,16 @@
 	<body>
 		<div class="main_centre_top"></div>
 			<div class="frame">
-				<canvas id="canvas" style="position: absolute; margin-left: 25px; margin-top: 50px; width: 500px;"></canvas>
-				<!-- Have the picture positioned her. -->
-				<img onclick='like()' src="/Camagru/img_resources/stickers/upvote.gif" alt="404-upvote">
+				<?php
+					echo "<img src='/Camagru/app/img_database/".$_GET['id']."' style='position: absolute; margin-left: 25px; margin-top: 50px; width: 500px;'>";
+					if (!isset($_SESSION["username"]))
+					{
+						echo "<br>";
+						echo "<button>*** Like ***</button>";
+					}
+				?>
 			</div>
 			<div class="main_centre_top"></div> <!-- This is just a spacer -->
-			<!-- <script src="/Camagru/js/main.js"></script> -->
 	</body>
 </html>
 <?php
