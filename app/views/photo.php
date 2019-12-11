@@ -2,7 +2,7 @@
 	include_once "../controllers/session.controllers.php";
 	require "header.html";
 	include_once "../controllers/session.controllers.php";
-
+	include_once "../../config/connection.php";
 
 	// if (!isset($_SESSION["username"]))
 	// {
@@ -19,8 +19,15 @@
 		<div class="main_centre_top"></div>
 			<div class="frame">
 				<?php
-					echo "<img src='/Camagru/app/img_database/".$_GET['id']."' style='position: absolute; margin-left: 25px; margin-top: 50px; width: 500px;'>";
-					if (!isset($_SESSION["username"]))
+					$query = "SELECT * FROM `imgtbl` WHERE `postid` = :postid";
+					$stmt = $db->prepare($query);
+					$stmt->execute([':postid' => $_GET['id']]);
+					$res = $stmt->fetch();
+					echo "<p>".$res['likes']."</p>";
+					echo "<a href='/Camagru/app/views/user.php?user=".$res['id']."'>
+					<img src='/Camagru/app/img_database/".$_GET['id']."' style='position: absolute; margin-left: 25px; margin-top: 50px; width: 500px;'>
+					</a>";
+					if (isset($_SESSION["username"]))
 					{
 						echo "<br>";
 						echo "<button>*** Like ***</button>";

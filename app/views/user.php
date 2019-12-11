@@ -1,21 +1,21 @@
-<html>
-	<?php
-		include_once "app/controllers/session.controllers.php";
-		include_once "config/connection.php";
-		include_once "config/database.php";
-		include_once "app/views/header.html";
-		include_once "app/views/footer.php";
+<?php
+	include_once "../controllers/session.controllers.php";
+	require "header.html";
+	include_once "../controllers/session.controllers.php";
+	include_once "../../config/connection.php";
 
-	?>
+?>
+<html>
 	<head>
-		<title>Camagru</title>
+		<title>Viewer</title>
 		<link rel="stylesheet" type= "text/css" href="/Camagru/css/style.css">
 	</head>
 	<body>
 		<div class="main_centre_top"></div>
-		<div class="feed">
-		<?php
+		<div class="feed"><h1 class="main_top_logo">Someone's Profile</h1></div>
 		
+			<div class="feed">
+			<?php
 		$query = "SELECT * FROM `imgtbl` WHERE `num` > 0";
 		$stmt = $db->prepare($query);
 		$stmt->execute();
@@ -34,7 +34,7 @@
 		}
 		$all_pages = ceil($all/$lim);
 		$start = ($page - 1) * $lim;
-		$query = "SELECT * FROM `imgtbl` LIMIT $start, $lim";
+		$query = "SELECT * FROM `imgtbl` WHERE `id` = ".$_GET['user']." LIMIT $start, $lim ";
 		$stmt = $db->prepare($query);
 		$stmt->execute();
 		while ($res = $stmt->fetch())
@@ -43,9 +43,13 @@
 			</a>";
 		echo "<br>";
 		for ($i = 1; $i <= $all_pages; $i++)
-			echo "<a href='index.php?page=$i'> $i </a>";
+			echo "<a href='user.php?user=".$res['id']."&page=$i'> $i </a>";
 		?>
-		</div>
-		<div class="main_centre_top"></div>
+			</div>
+			<div class="main_centre_top"></div> <!-- This is just a spacer -->
 	</body>
 </html>
+<?php
+	
+	require "footer.php";
+?>
