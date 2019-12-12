@@ -43,9 +43,10 @@
 					echo "<a href='/Camagru/app/views/photo.php?id=".$res['postid']."'>
 					<img src='/Camagru/app/img_database/".$res['postid']."' width='325px' class='thumb'>
 					</a>";
-					echo "<button>Click below to delete</button>
+					echo "
 					<form action='/Camagru/app/controllers/delete.controllers.php' method='post'>
-					<input type='submit' name='Delete' title='delete' value='".$res['postid']."'>
+					<input type='hidden' name='Delete' title='delete' value='".$res['postid']."'>
+					<button type='submit'>Delete</button>
 					</form>";
 				}
 				echo "<br>";

@@ -27,10 +27,21 @@
 					echo "<a href='/Camagru/app/views/user.php?user=".$res['id']."'>
 					<img src='/Camagru/app/img_database/".$_GET['id']."' style='position: absolute; margin-left: 25px; margin-top: 50px; width: 500px;'>
 					</a>";
-					if (isset($_SESSION["username"]))
+				?>
+			</div>
+			<div class="main_centre_top"></div> <!-- This is just a spacer -->
+			<div class="frame2">
+				<?php
+					if (!isset($_SESSION["username"]))
 					{
 						echo "<br>";
-						echo "<button>*** Like ***</button>";
+						echo "<form action='/Camagru/app/controllers/like.controllers.php' method='post'>
+						<input type='submit' name='like' title='like' value='Like'>
+						</form>";
+						echo "<form action='/Camagru/app/controllers/comment.controllers.php' method='post'>
+						<input type='text' name='comment' title='comment' placeholder='Comment'>
+						<input type='submit' name='comment' title='comment' value='Submit'>
+						</form>";
 					}
 				?>
 			</div>

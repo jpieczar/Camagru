@@ -54,7 +54,7 @@ a{
 .main_top {
 	position: absolute;
 	display: flex;
-	position: fixed;
+	/* position: fixed; */
 	/* background-color: rgb(255, 255, 255); */
 	/* background-color: rgb(205, 211, 218); */
 	background-image: url("/Camagru/img_resources/background/trip_tron_png.jpg");
@@ -120,6 +120,14 @@ a{
 	justify-content: center;
 	width: 550px;
 	height: 600px;
+	border: 10px solid white;
+	background-color: white;
+	margin:0 auto;
+	box-shadow: 25px 25px 15px black;
+}
+.frame2 {
+	justify-content: center;
+	width: 550px;
 	border: 10px solid white;
 	background-color: white;
 	margin:0 auto;

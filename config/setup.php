@@ -23,7 +23,6 @@ try /* Create table usrtbl. */
     (
         `id`			INT(11) auto_increment PRIMARY KEY NOT NULL,
         `verification`  BOOL NOT NULL DEFAULT 0, /* !0 means varified. */
-		`sudo`			BOOL NOT NULL DEFAULT 0,  /*Grants admin privileges.*/
         `username`		TINYTEXT NOT NULL, /* 6+ characters long. */
         `email`			TINYTEXT NOT NULL, /* Should follow email format. */
         `pass`			TINYTEXT NOT NULL, /* Encode/decode the string. */
@@ -54,25 +53,35 @@ catch (PDOException $err)
 {
     echo "<p style='color:red;'>Failed to create table ~~imgtbl~~</p>".$err->getMessage();
 }
-// try
-// {   /* Create an admin and 4 test users. */
-//     $pass = md5("thisismypaSS$123");
-//     $ssap = md5("thisismypaSS$321");
-//     $db = new PDO($DB_SERVER_DB, $DB_USER, $DB_PASSWORD);
-//     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//     $query = "INSERT INTO `usrtbl` (`sudo`, `verification`, `username`, `email`, `pass`)
-//     VALUES	('1', '1', 'adminME', 'adminme@camagru.com', '$pass'),
-//     ('0', '1', 'alice_palace', 'alice@gmail.com', '$ssap'),
-//     ('0', '0', 'bobby_dobby', 'bobby@gmail.com', '$ssap'),
-//     ('0', '0', 'claire_bear', 'claire@gmail.com', '$pass'),
-//     ('0', '1', 'derrick_avenue', 'derrick@gmail.com', '$pass');
-//     WHERE NOT EXISTS (SELECT `username` FROM `usrtbl`)
-//     ";
-//     $db->exec($query);
-//     echo "<p style='color:green;'>Admin created</p>";
-// } 
-// catch (PDOException $err)
-// {
-//     echo "<p style='color:red;'>Failed to create user: admin</p>".$err->getMessage();
-// }
+
+try /* Create table liktbl. */
+{
+    $query = "CREATE TABLE IF NOT EXISTS `liktbl`
+    (
+        `id`			INT(11) PRIMARY KEY NOT NULL, /* User id */
+        `postid`		CHAR(255) NOT NULL /* Should match the user\'s username. */
+    )";
+    $db->exec($query);
+    echo "<p style='color:green;'>Created table ~~liktbl~~</p>";
+} 
+catch (PDOException $err)
+{
+    echo "<p style='color:red;'>Failed to create table ~~liktbl~~</p>".$err->getMessage();
+}
+
+try /* Create table comtbl. */
+{
+    $query = "CREATE TABLE IF NOT EXISTS `comtbl`
+    (
+        `id`			INT(11) PRIMARY KEY NOT NULL, /* User id */
+        `postid`		CHAR(255) NOT NULL, /* Should match the user\'s username. */
+        `comment`       CHAR(255)  NOT NULL /* This stores the comment. */
+    )";
+    $db->exec($query);
+    echo "<p style='color:green;'>Created table ~~comtbl~~</p>";
+} 
+catch (PDOException $err)
+{
+    echo "<p style='color:red;'>Failed to create table ~~comtbl~~</p>".$err->getMessage();
+}
 ?>
