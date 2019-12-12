@@ -42,8 +42,9 @@
 			<img src='/Camagru/app/img_database/".$res['postid']."' width='400px' class='thumb'>
 			</a>";
 		echo "<br>";
+		$j = $_GET['user'];
 		for ($i = 1; $i <= $all_pages; $i++)
-			echo "<a href='user.php?user=".$res['id']."&page=$i'> $i </a>";
+			echo "<a href='user.php?user=".$j."&page=$i'> $i </a>";
 		?>
 			</div>
 			<div class="main_centre_top"></div> <!-- This is just a spacer -->
