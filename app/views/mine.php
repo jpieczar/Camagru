@@ -17,55 +17,42 @@
 		
 			<div class="feed">
 			<?php
-		$query = "SELECT * FROM `imgtbl` WHERE `num` > 0";
-		$stmt = $db->prepare($query);
-		$stmt->execute();
-		$res = $stmt->fetch();
-		$all = $stmt->rowCount();
-		$lim = 6;
-		$page = '';
-		if (!isset($_GET['page']))
-			$page = 1;
-		else
-		{
-			if (is_numeric($_GET['page']))
-				$page = $_GET['page'];
-			else
-				$page = 1;
-		}
-		$all_pages = ceil($all/$lim);
-		$start = ($page - 1) * $lim;
-		$query = "SELECT * FROM `imgtbl` WHERE `id` = ".$_SESSION['id']." LIMIT $start, $lim";
-		$stmt = $db->prepare($query);
-		$stmt->execute();
-		while ($res = $stmt->fetch())
-		{
-			echo "<a href='/Camagru/app/views/photo.php?id=".$res['postid']."'>
-			<img src='/Camagru/app/img_database/".$res['postid']."' width='300px' class='thumb'>
-			</a>";
-			echo "<button id='delThis'>Delete</button>";
-		}
-		echo "<br>";
-		for ($i = 1; $i <= $all_pages; $i++)
-			echo "<a href='mine.php?user=".$res['id']."&page=$i'> $i </a>";
-		?>
+				$query = "SELECT * FROM `imgtbl` WHERE `id` = ".$_SESSION['id']."";
+				$stmt = $db->prepare($query);
+				$stmt->execute();
+				$res = $stmt->fetch();
+				$all = $stmt->rowCount();
+				$lim = 6;
+				$page = '';
+				if (!isset($_GET['page']))
+					$page = 1;
+				else
+				{
+					if (is_numeric($_GET['page']))
+						$page = $_GET['page'];
+					else
+						$page = 1;
+				}
+				$all_pages = ceil($all/$lim);
+				$start = ($page - 1) * $lim;
+				$query = "SELECT * FROM `imgtbl` WHERE `id` = ".$_SESSION['id']." LIMIT $start, $lim";
+				$stmt = $db->prepare($query);
+				$stmt->execute();
+				while ($res = $stmt->fetch())
+				{
+					echo "<a href='/Camagru/app/views/photo.php?id=".$res['postid']."'>
+					<img src='/Camagru/app/img_database/".$res['postid']."' width='325px' class='thumb'>
+					</a>";
+					echo "<button>Click below to delete</button>
+					<form action='/Camagru/app/controllers/delete.controllers.php' method='post'>
+					<input type='submit' name='Delete' title='delete' value='".$res['postid']."'>
+					</form>";
+				}
+				echo "<br>";
+				for ($i = 1; $i <= $all_pages; $i++)
+					echo "<a href='mine.php?user=".$res['id']."&page=$i'> $i </a>";
+			?>
 			</div>
 			<div class="main_centre_top"></div> <!-- This is just a spacer -->
-			<script>
-				delThis.addEventListener('click', function() {				
-				var xhttp = new XMLHttpRequest();
-				// var urlValues = ("imgURL="+canURL+"&ovlURL="+ovlURL);
-
-				xhttp.open("POST", "/Camagru/app/controllers/delete.controllers.php", true);
-				xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-				xhttp.onreadystatechange = function(){
-				if(xhttp.status == 200){
-					console.log(this.responseText);
-				}
-				};
-				xhttp.send("imgURL=" + canURL + "&ovlURL=" + ovlURL);
-				})
-			</script>
 	</body>
 </html>

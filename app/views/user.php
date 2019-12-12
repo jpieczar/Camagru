@@ -16,7 +16,7 @@
 		
 			<div class="feed">
 			<?php
-		$query = "SELECT * FROM `imgtbl` WHERE `num` > 0";
+		$query = "SELECT * FROM `imgtbl` WHERE `id` = ".$_GET['user']."";
 		$stmt = $db->prepare($query);
 		$stmt->execute();
 		$res = $stmt->fetch();
