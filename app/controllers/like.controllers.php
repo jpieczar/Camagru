@@ -4,29 +4,28 @@ include_once "error.controllers.php";
 include_once "email.controllers.php";
 include_once "../../config/connection.php";
 
-
-if (isset($_POST["submit"]))
+/* Checks if the like exists. */
+$sql = "SELECT * FROM `liktbl` WHERE `id` = :userid AND `postid` = :postid LIMIT 1";
+$stmt = $db->prepare($sql);
+$stmt->execute(array(":userid" => $_SESSION['id'], ":postid" => $_GET['id']));
+$res = $stmt->fetch();
+if (empty($res))
 {
-	/* Below adds the user. */
-	try
-	{
-		$sql = "INSERT INTO `liktbl` (`userid`, `postid`)
-		VALUES (:userid, :postid);";
-
-		$stmt = $db->prepare($sql);
-		$stmt->execute(array(":userid" => $username, ":postid" => $email));
-
-		$sql = "UPDATE `imgtbl` SET `likes` = `likes` + 1 WHERE `id` = :username;";
-		$stmt = $db->prepare($sql);
-		$stmt->execute(array(":username" => $user, ":pas" => $password));
-
-
-		header("Location: /Camagru/index.php");
-	}
-	catch (PDOException $err)
-	{
-		// echo "<p style='color: red;'>Failed to add user.</P>";
-		header("Location: ../views/error.php");
-	}
+	/* Adds the like. */
+	$sql = "INSERT INTO `liktbl` (`id`, `postid`)
+	VALUES (:userid, :postid);";
+	$stmt = $db->prepare($sql);
+	$stmt->execute(array(":userid" => $_SESSION['id'], ":postid" => $_GET['id']));
+	/* Updates the `imgtbl` like. */
+	$sql = "UPDATE `imgtbl` SET `likes` = `likes` + 1 WHERE `postid` = :postid;";
+	$stmt = $db->prepare($sql);
+	$stmt->execute(array(":postid" => $_GET['id']));
+	header("Location: /Camagru/index.php");
+	exit();
+}
+else
+{
+	header("Location: /Camagru/index.php");
+	exit();
 }
 ?>

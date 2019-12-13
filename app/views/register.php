@@ -21,11 +21,6 @@
 				<input type="email" name="email" title="email" placeholder="Email">
 				<input type="password" name="password" title="password" placeholder="Password">
 				<input type="submit" name="submit" title="register" value="Register">
-				<!-- <input type="password" placeholder="Re-enter Password"> -->
-				<!--
-					Please make a comeback dear "Re-enter password".
-					We miss you o so much UWU.
-				-->
 			</form>
 		</div>
 	</body>

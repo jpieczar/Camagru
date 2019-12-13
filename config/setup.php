@@ -58,8 +58,9 @@ try /* Create table liktbl. */
 {
     $query = "CREATE TABLE IF NOT EXISTS `liktbl`
     (
-        `id`			INT(11) PRIMARY KEY NOT NULL, /* User id */
-        `postid`		CHAR(255) NOT NULL /* Should match the user\'s username. */
+        `num`           INT(11) auto_increment PRIMARY KEY NOT NULL,
+        `id`			INT(11) NOT NULL, /* User id */
+        `postid`		CHAR(255) NOT NULL
     )";
     $db->exec($query);
     echo "<p style='color:green;'>Created table ~~liktbl~~</p>";
@@ -73,7 +74,7 @@ try /* Create table comtbl. */
 {
     $query = "CREATE TABLE IF NOT EXISTS `comtbl`
     (
-        `id`			INT(11) PRIMARY KEY NOT NULL, /* User id */
+        `num`			INT(11) auto_increment PRIMARY KEY NOT NULL,
         `postid`		CHAR(255) NOT NULL, /* Should match the user\'s username. */
         `comment`       CHAR(255)  NOT NULL /* This stores the comment. */
     )";

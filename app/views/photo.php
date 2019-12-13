@@ -35,13 +35,22 @@
 					if (!isset($_SESSION["username"]))
 					{
 						echo "<br>";
-						echo "<form action='/Camagru/app/controllers/like.controllers.php' method='post'>
-						<input type='submit' name='like' title='like' value='Like'>
+						echo "<form action='/Camagru/app/controllers/like.controllers.php' method='get'>
+						<input type='hidden' name='id' title='like' value='".$_GET['id']."'>
+						<button type='submit'>Like</button>
 						</form>";
-						echo "<form action='/Camagru/app/controllers/comment.controllers.php' method='post'>
-						<input type='text' name='comment' title='comment' placeholder='Comment'>
-						<input type='submit' name='comment' title='comment' value='Submit'>
-						</form>";
+						echo "<form action='/Camagru/app/controllers/comment.controllers.php' method='get'>
+						<input type='text' name='comment' title='comment' placeholder='Write Comment'>
+						<input type='hidden' name='postid' value='".$_GET['id']."'>
+						<input type='submit' title='comment'>
+						</form><br>";
+						$query = "SELECT `comment` FROM `comtbl` WHERE `postid` = :postid";
+						$stmt = $db->prepare($query);
+						$stmt->execute([':postid' => $_GET['id']]);
+						while ($res = $stmt->fetch())
+						echo "<p>
+						".$res['comment']."
+						<p>";
 					}
 				?>
 			</div>
