@@ -17,7 +17,7 @@
 		<div class="main_centre_small">
 			<h1 class="main_top_logo">Login Page</h1>
 			<form action="../controllers/login.controllers.php" method="post" class="form">
-				<input type="text" name="username" title="username" placeholder="Username">
+				<input type="text" name="username" title="username" placeholder="Username" autocomplete="off">
 				<input type="password" name="password" title="password" placeholder="Password">
 				<input type="submit" name="submit" title="login" value="Login">
 			</form>

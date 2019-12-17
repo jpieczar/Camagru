@@ -10,10 +10,11 @@ include_once "../../config/connection.php";
 // echo $_GET['comment'];
 
 /* Adds the comment. */
+$comment = htmlentities($_GET['comment']);
 $sql = "INSERT INTO `comtbl` (`comment`, `postid`)
 VALUES (:comment, :postid);";
 $stmt = $db->prepare($sql);
-$stmt->execute(array(":comment" => $_GET['comment'], ":postid" => $_GET['postid']));
+$stmt->execute(array(":comment" => $comment, ":postid" => $_GET['postid']));
 header("Location: /Camagru/index.php");
 exit();
 ?>

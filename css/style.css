@@ -17,6 +17,7 @@ a{
 	color: yellow;
 	margin-left: 50px;
 	font-family: 'Comic Sans MS', cursive;
+	text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .login {

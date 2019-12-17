@@ -26,10 +26,6 @@
 				<button id="photo-button" class="snap">>>>>SNAP<<<<</button>
 				<button id="clear-button" class="snap">>>>>CLEAR<<<<</button>
 				<button id="save-button" class="snap">>>>>SAVE<<<<</button>
-				<form action="/Camagru/app/controllers/camera.controllers.php" method="post">
-					<input type="file" name="file">
-					<input type="submit" name="Upload" title="Upload image" value="Upload image">
-				</form>
 			</div>
 			<div class="main_centre">
 			<img style="width:100px;height:100px;" src="/Camagru/img_resources/stickers/recycle.png" id="recycle" onclick="addSticker(this.id)" alt="404_recycle" title="recycle">

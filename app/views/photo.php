@@ -32,7 +32,7 @@
 			<div class="main_centre_top"></div> <!-- This is just a spacer -->
 			<div class="frame2">
 				<?php
-					if (!isset($_SESSION["username"]))
+					if (isset($_SESSION["username"]))
 					{
 						echo "<br>";
 						echo "<form action='/Camagru/app/controllers/like.controllers.php' method='get'>
