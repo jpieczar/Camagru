@@ -19,7 +19,23 @@ if (empty($res))
 	/* Updates the `imgtbl` like. */
 	$sql = "UPDATE `imgtbl` SET `likes` = `likes` + 1 WHERE `postid` = :postid;";
 	$stmt = $db->prepare($sql);
-	$stmt->execute(array(":postid" => $_GET['id']));
+
+	$new = "SELECT * FROM `usrtbl` WHERE `id` = :userid";
+	$st = $db->prepare($new);
+	$st->execute(array(":userid" => $_SESSION["id"]));
+	$nres = $st->fetch();
+
+	if ($nres["pref"] == 0)
+	{
+		$to = $nres["email"];
+	$subject = "NOTIFICATION";
+	$message = "
+	<p>Someone liked your post.</p>";
+	$headers = "like@camagru.com";
+	mail($to, $subject, $message, $headers);
+	}
+
+	// $stmt->execute(array(":postid" => $_GET['id']));
 	header("Location: /Camagru/index.php");
 	exit();
 }

@@ -40,6 +40,12 @@
 				<input type="text" name="busername" title="Change username" placeholder="Change Username">
 				<input type="submit" name="cUsername" title="Change username" value="Change Username">
 			</form>
+			<form action="../controllers/profile.controllers.php" method="post" class="form">
+				<input type="submit" name="switch" title="notification" value="Notification on">
+			</form>
+			<form action="../controllers/profile.controllers.php" method="post" class="form">
+				<input type="submit" name="switch2" title="notification" value="Notifications off">
+			</form>
 		</div>
 	</body>
 </html>

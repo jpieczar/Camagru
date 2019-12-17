@@ -79,4 +79,28 @@ if (isset($_POST["cEmail"]))
 	session_destroy();
 	sendEmail($email);
 }
+
+if (isset($_POST["switch"]))
+{
+	$user = $_SESSION['username'];
+
+	$sql = "UPDATE `usrtbl` SET `pref` = 0 WHERE `username` = :username;";
+
+	$stmt = $db->prepare($sql);
+	$stmt->execute(array(":username" => $user));
+
+	header("Location: /Camagru/app/views/profile.php");
+}
+
+if (isset($_POST["switch2"]))
+{
+	$user = $_SESSION['username'];
+
+	$sql = "UPDATE `usrtbl` SET `pref` = 1 WHERE `username` = :username;";
+
+	$stmt = $db->prepare($sql);
+	$stmt->execute(array(":username" => $user));
+
+	header("Location: /Camagru/app/views/profile.php");
+}
 ?>

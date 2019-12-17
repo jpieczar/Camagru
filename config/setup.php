@@ -26,6 +26,7 @@ try /* Create table usrtbl. */
         `username`		TINYTEXT NOT NULL, /* 6+ characters long. */
         `email`			TINYTEXT NOT NULL, /* Should follow email format. */
         `pass`			TINYTEXT NOT NULL, /* Encode/decode the string. */
+        `pref`          INT(11) NOT NULL DEFAULT 0, /* Notification preferences. */
         `create_date`	DATETIME DEFAULT current_timestamp
     )";
     $db->exec($query);
