@@ -14,20 +14,28 @@ if (isset($_POST["forgot"]))
 	$stmt->execute([':username' => $user]);
 	$res = $stmt->fetch();
 
-	$sql = "UPDATE `usrtbl` SET `pass` = :pas WHERE `username` = :username;";
-	$stmt = $db->prepare($sql);
-	$stmt->execute(array(":username" => $user, ":pas" => $password));
+	if ($res["varification"] == 1)
+	{
+		$sql = "UPDATE `usrtbl` SET `pass` = :pas WHERE `username` = :username;";
+		$stmt = $db->prepare($sql);
+		$stmt->execute(array(":username" => $user, ":pas" => $password));
 
-	$to = $res['email'];
-	$subject = "NEW PASSWORD";
-	$message = "
-	<p>Your new password is >>>> $rand <<<<.</p>
-	<p>Click below to go back to the login page.</p>
-	<a href='http://localhost:8080/Camagru/app/views/login.php'>Camagru</a>
-	<p>Change your password as soon as possible.</p>
-	";
-	$headers = "forgot@camagru.com";
-	mail($to, $subject, $message, $headers);
-	header("Location: ../views/login.php");
+		$to = $res['email'];
+		$subject = "NEW PASSWORD";
+		$message = "
+		<p>Your new password is >>>> $rand <<<<.</p>
+		<p>Click below to go back to the login page.</p>
+		<a href='http://localhost:8080/Camagru/app/views/login.php'>Camagru</a>
+		<p>Change your password as soon as possible.</p>
+		";
+		$headers = "forgot@camagru.com";
+		mail($to, $subject, $message, $headers);
+		header("Location: ../views/login.php");
+	}
+	else
+	{
+		mail($to, $subject, $message, $headers);
+		header("Location: ../views/login.php");
+	}
 }
 ?>

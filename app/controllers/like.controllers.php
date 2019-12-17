@@ -19,6 +19,7 @@ if (empty($res))
 	/* Updates the `imgtbl` like. */
 	$sql = "UPDATE `imgtbl` SET `likes` = `likes` + 1 WHERE `postid` = :postid;";
 	$stmt = $db->prepare($sql);
+	$stmt->execute(array(":postid" => $_GET['id']));
 
 	$new = "SELECT * FROM `usrtbl` WHERE `id` = :userid";
 	$st = $db->prepare($new);
@@ -35,7 +36,6 @@ if (empty($res))
 	mail($to, $subject, $message, $headers);
 	}
 
-	// $stmt->execute(array(":postid" => $_GET['id']));
 	header("Location: /Camagru/index.php");
 	exit();
 }
