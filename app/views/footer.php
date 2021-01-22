@@ -4,8 +4,8 @@
 	</head>
 	<body>
 		<div class="main_bottom">
-			<p class="copy">~	&copy jpieczar	~</p>
-			<a href="/Camagru/app/views/profile.php" class="copy">Profile</a>
+			<p class="copy"><b>~	&copy jpieczar	~</b></p>
+			<a href="/Camagru/app/views/profile.php" class="copy"><b>Profile</b></a>
 		</div>
 	</body>
 </html>

@@ -109,7 +109,7 @@ function addSticker(sid) {
 	sticker = new Image; /* Creates a blank image template. */
 	sticker.src = "/Camagru/img_resources/stickers/"+sid+".png";
 
-	if (sid == "beans")
+	if (sid == "Beans")
 		stick.drawImage(sticker, 0, 0, 250, 250);
 	else if (sid == "comedy")
 		stick.drawImage(sticker, 190, 110, 180, 180);
